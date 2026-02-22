@@ -29,9 +29,9 @@ export default function StudentDashboard() {
       const [profileRes, assessRes, careerRes, collegeRes, companyRes] = await Promise.all([
         supabase.from("profiles").select("*").eq("user_id", user.id).maybeSingle(),
         supabase.from("student_assessments").select("*").eq("user_id", user.id).order("created_at", { ascending: false }).limit(1).maybeSingle(),
-        supabase.from("career_paths").select("*").limit(8),
-        supabase.from("colleges").select("*").limit(6),
-        supabase.from("companies").select("*").limit(6),
+        supabase.from("career_paths").select("*"),
+        supabase.from("colleges").select("*").limit(15),
+        supabase.from("companies").select("*").limit(15),
       ]);
       setProfile(profileRes.data);
       setAssessment(assessRes.data);
