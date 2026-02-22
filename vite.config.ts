@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/career-compass-pro/",
+  base: "/career-compass-pro/',
   server: {
     host: "::",
     port: 8080,
