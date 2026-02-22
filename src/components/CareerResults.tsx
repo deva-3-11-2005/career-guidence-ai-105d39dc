@@ -44,7 +44,7 @@ export default function CareerResults({ assessment, careerPaths }: Props) {
   const scored = careerPaths
     .map(c => ({ ...c, score: matchScore(c, assessment) }))
     .sort((a, b) => b.score - a.score)
-    .slice(0, 5);
+    .slice(0, 10);
 
   const formatSalary = (n: number) => n >= 100000 ? `₹${(n / 100000).toFixed(1)}L` : `₹${n?.toLocaleString()}`;
   const outlookColor = (o: string) => ({ excellent: "bg-emerald-100 text-emerald-700", good: "bg-blue-100 text-blue-700", moderate: "bg-amber-100 text-amber-700" }[o] || "bg-muted text-muted-foreground");
