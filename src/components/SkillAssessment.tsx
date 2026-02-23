@@ -36,6 +36,18 @@ const SUGGESTIONS: Record<string, {
         ],
       },
       {
+        name: "Science (PCMC – Physics, Chemistry, Maths, Computer Science)",
+        subjects: ["Physics", "Chemistry", "Mathematics", "Computer Science", "English"],
+        careers: ["Software Engineer", "Data Scientist", "AI/ML Engineer", "Full Stack Developer", "Cybersecurity Analyst", "Cloud Architect"],
+        courses: [
+          { title: "CS50: Introduction to Computer Science", url: "https://www.coursera.org/learn/cs50" },
+          { title: "Python for Everybody", url: "https://www.coursera.org/specializations/python" },
+          { title: "Introduction to Programming with Python", url: "https://www.coursera.org/learn/python" },
+          { title: "Mathematics for Machine Learning", url: "https://www.coursera.org/specializations/mathematics-machine-learning" },
+          { title: "Google IT Support Certificate", url: "https://www.coursera.org/professional-certificates/google-it-support" },
+        ],
+      },
+      {
         name: "Science (PCB – Physics, Chemistry, Biology)",
         subjects: ["Physics", "Chemistry", "Biology", "English", "Psychology / IP"],
         careers: ["Doctor (MBBS)", "Dentist", "Pharmacist", "Biotechnology", "Veterinary Science"],
@@ -81,6 +93,18 @@ const SUGGESTIONS: Record<string, {
           { title: "Python for Everybody", url: "https://www.coursera.org/specializations/python" },
           { title: "Physics: Mechanics", url: "https://www.coursera.org/learn/mechanics" },
           { title: "Preparing for JEE/Competitive Exams – Math", url: "https://www.coursera.org/learn/pre-calculus" },
+        ],
+      },
+      {
+        name: "Computer Science (PCMC) – Additional Courses",
+        subjects: [],
+        careers: [],
+        courses: [
+          { title: "Java Programming and Software Engineering", url: "https://www.coursera.org/specializations/java-programming" },
+          { title: "Web Design for Everybody (HTML, CSS, JS)", url: "https://www.coursera.org/specializations/web-design" },
+          { title: "Data Structures and Algorithms", url: "https://www.coursera.org/specializations/data-structures-algorithms" },
+          { title: "Google IT Automation with Python", url: "https://www.coursera.org/professional-certificates/google-it-automation" },
+          { title: "Introduction to Cybersecurity", url: "https://www.coursera.org/learn/intro-cyber-security" },
         ],
       },
       {
@@ -170,6 +194,18 @@ const SUGGESTIONS: Record<string, {
           { title: "Web Development with React", url: "https://www.coursera.org/specializations/full-stack-react" },
           { title: "Google UX Design", url: "https://www.coursera.org/professional-certificates/google-ux-design" },
           { title: "AWS Cloud Practitioner", url: "https://www.coursera.org/professional-certificates/aws-cloud-technology-consultant" },
+        ],
+      },
+      {
+        name: "B.Tech CSE / IT (Computer Science & Engineering)",
+        duration: "4 years",
+        careers: ["Software Engineer", "AI/ML Engineer", "Data Scientist", "DevOps Engineer", "Cybersecurity Specialist", "Full Stack Developer"],
+        courses: [
+          { title: "Machine Learning by Andrew Ng", url: "https://www.coursera.org/learn/machine-learning" },
+          { title: "Deep Learning Specialization", url: "https://www.coursera.org/specializations/deep-learning" },
+          { title: "Google Data Analytics Certificate", url: "https://www.coursera.org/professional-certificates/google-data-analytics" },
+          { title: "Meta Front-End Developer", url: "https://www.coursera.org/professional-certificates/meta-front-end-developer" },
+          { title: "IBM Full Stack Software Developer", url: "https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer" },
         ],
       },
       {
@@ -277,6 +313,7 @@ export default function SkillAssessment({ userId, profile, onComplete }: Props) 
     if (!suggestion?.degrees) return suggestion?.degrees;
     const streamMap: Record<string, string[]> = {
       science: ["B.Tech", "MBBS", "BCA", "B.Sc"],
+      computer_science: ["B.Tech CSE", "BCA", "B.Sc. IT"],
       commerce: ["B.Com", "BBA"],
       arts: ["BA", "LLB"],
       engineering: ["B.Tech", "BCA"],
@@ -453,6 +490,7 @@ export default function SkillAssessment({ userId, profile, onComplete }: Props) 
                   <SelectTrigger className="mt-1.5 h-11"><SelectValue placeholder="Select stream" /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="science">Science (PCM/PCB)</SelectItem>
+                    <SelectItem value="computer_science">Computer Science (PCMC/CSE/IT)</SelectItem>
                     <SelectItem value="commerce">Commerce</SelectItem>
                     <SelectItem value="arts">Arts / Humanities</SelectItem>
                     <SelectItem value="engineering">Engineering</SelectItem>

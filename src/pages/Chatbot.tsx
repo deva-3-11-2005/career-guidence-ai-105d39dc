@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
-import { Bot, Send, User, Loader2, MessageCircle, Sparkles } from "lucide-react";
+import { Bot, Send, User, Loader2, MessageCircle, Sparkles, ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { useNavigate } from "react-router-dom";
 
@@ -83,8 +83,16 @@ export default function Chatbot() {
               Online · Powered by Gemini AI
             </div>
           </div>
-          <div className="ml-auto">
+          <div className="ml-auto flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-amber-400" />
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => navigate(-1)}
+              className="text-muted-foreground hover:text-foreground"
+            >
+              <ArrowLeft className="w-4 h-4 mr-1" /> Exit Chat
+            </Button>
           </div>
         </div>
 
