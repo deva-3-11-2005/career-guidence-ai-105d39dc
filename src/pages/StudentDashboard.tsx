@@ -43,7 +43,7 @@ export default function StudentDashboard() {
   }, [user]);
 
   const levelLabel = (level: string) => {
-    const labels: Record<string, string> = { school_10: "10th Grade", school_12: "12th Grade", ug: "Undergraduate", pg: "Postgraduate" };
+    const labels: Record<string, string> = { school_10: "10th Grade", school_11: "11th Grade", school_12: "12th Grade", ug: "Undergraduate", pg: "Postgraduate" };
     return labels[level] || "Student";
   };
 
