@@ -14,6 +14,7 @@ import Chatbot from "./pages/Chatbot";
 import Colleges from "./pages/Colleges";
 import Companies from "./pages/Companies";
 import Careers from "./pages/Careers";
+import Profile from "./pages/Profile";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/colleges" element={<Colleges />} />
             <Route path="/companies" element={<Companies />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>

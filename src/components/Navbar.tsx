@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
-import { GraduationCap, Menu, X, LogOut, LayoutDashboard, MessageCircle } from "lucide-react";
+import { GraduationCap, Menu, X, LogOut, LayoutDashboard, MessageCircle, UserCircle } from "lucide-react";
 
 export default function Navbar() {
   const { user, isAdmin, signOut } = useAuth();
@@ -54,6 +54,15 @@ export default function Navbar() {
                 Dashboard
               </Button>
               <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => navigate("/profile")}
+                className="text-white/80 hover:text-white hover:bg-white/10"
+              >
+                <UserCircle className="w-4 h-4 mr-1.5" />
+                Profile
+              </Button>
+              <Button
                 size="sm"
                 onClick={handleSignOut}
                 className="bg-white/10 hover:bg-white/20 text-white border border-white/20"
@@ -92,6 +101,7 @@ export default function Navbar() {
             {user ? (
               <>
                 <Button size="sm" onClick={() => { navigate(isAdmin ? "/admin" : "/student"); setMenuOpen(false); }} className="flex-1 bg-white/10 text-white">Dashboard</Button>
+                <Button size="sm" onClick={() => { navigate("/profile"); setMenuOpen(false); }} className="flex-1 bg-white/10 text-white">Profile</Button>
                 <Button size="sm" onClick={handleSignOut} className="flex-1 bg-white/10 text-white">Sign Out</Button>
               </>
             ) : (
